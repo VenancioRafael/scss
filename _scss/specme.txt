@@ -1,0 +1,56 @@
+>>>> Editor
+
+    Version: 1.39.2 (user setup)
+    Commit: 6ab598523be7a800d7f3eb4d92d7ab9a66069390
+    Date: 2019-10-15T15:35:18.241Z
+    Electron: 4.2.10
+    Chrome: 69.0.3497.128
+    Node.js: 10.11.0
+    V8: 6.9.427.31-electron.0
+    OS: Windows_NT x64 10.0.17763
+
+>>>> Configuração do Visual Studio
+
+    {
+    "workbench.colorTheme": "Xcode Partial (Light)",
+    "editor.minimap.enabled": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "[kivy]": {
+        
+    },
+    "explorer.confirmDelete": false,
+    "autoprefixer.browsers":[
+        "cover 100%",
+        "ie > 1",
+        "firefox > 1",
+        "ios > 1",
+        "unreleased versions",
+        "last 20 years",
+        "dead",
+        "opera > 1"
+    ],
+
+    // Live Sass Compiler
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "~/../_css/",
+        },
+        {
+            "format": "compressed",
+            "extensionName": ".min.css",
+            "savePath": "~/../_css/",
+        }
+    ],
+    "liveSassCompile.settings.generateMap": false,
+    "liveSassCompile.settings.autoprefix": [
+        "> 0%",
+        "last 10 versions",
+    ],
+    "window.zoomLevel": 0,
+    "editor.fontFamily": "'Roboto Mono'",
+    "editor.fontLigatures": true,
+    "editor.multiCursorModifier": "ctrlCmd"
+}

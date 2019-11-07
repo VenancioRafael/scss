@@ -1,0 +1,17 @@
+@import '../.mixin.scss/grid.mixin';
+
+.row {
+    @include createRow;
+    @media screen and (min-width: 0)                    { @include gridSmall; }
+    @media screen and (min-width: $breakpoint-small)    { @include gridSmall; }
+    @media screen and (min-width: $breakpoint-medium)   { @include gridMedium; }
+    @media screen and (min-width: $breakpoint-large)    { @include gridLarge; }
+    @media screen and (min-width: $breakpoint-xlarge)   { @include gridXLarge; }
+}
+
+.col {
+    @media screen and (min-width: 0)                    {@include column1('sm');}
+    @media screen and (min-width: $breakpoint-medium)   {@include column1('md');}
+    @media screen and (min-width: $breakpoint-large)    {@include column1('lg');}
+    @media screen and (min-width: $breakpoint-xlarge)   {@include column1('xl');}
+}

@@ -1,0 +1,4 @@
+@import '../.mixin.scss/typography.mixin';
+
+@media screen and (max-width: $breakpoint-large) { @include typographySmall; }
+@media screen and (min-width: $breakpoint-large) { @include typographyLarge; }

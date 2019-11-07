@@ -1,0 +1,12 @@
+// Screen Sizes
+$breakpoint-small: 460px;
+$breakpoint-medium: 620px;
+$breakpoint-large: 772px;
+$breakpoint-xlarge: 1036px;
+
+// Grid Values
+$grid-col-small: 1;
+$grid-col-medium: 3;
+$grid-col-large: 6;
+$grid-col-xlarge: 12;
+$grid-gutter-width: (20 / 16) + rem;

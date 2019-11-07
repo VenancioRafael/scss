@@ -1,0 +1,12 @@
+@import '../.mixin.scss/navigation.mixin';
+
+.navigation {
+    @include navigation;
+
+    &__menu {
+        @include navMenu;
+        &__link {
+            @include navLink;
+        }
+    }
+}

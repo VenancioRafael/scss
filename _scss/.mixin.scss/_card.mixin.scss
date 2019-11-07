@@ -1,0 +1,22 @@
+@mixin card {
+    @extend %displayBlock;
+    background-color: white;
+    border: web(1) solid colorTrans(black, 0.12);
+    border-radius: web(2);
+}
+
+@mixin cardTitle {
+    @extend %displayBlock;
+    border-bottom: web(1) solid colorTrans(black, 0.12);
+    padding: web(8) $grid-gutter-width;
+}
+
+@mixin cardContent {
+    @extend %displayBlock;
+    padding: $grid-gutter-width;
+}
+
+@mixin cardAction {
+    display: flex;
+    justify-content: flex-end;
+}

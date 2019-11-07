@@ -1,0 +1,85 @@
+// Função para calcular o letter-spacing
+@function tracking($tracking, $size) { $tracking: ($tracking / $size) + rem; @return $tracking; }
+
+// Função para transformar o font-size em *rem
+@function size($size){$size:($size / 16) + rem;@return $size;}
+
+// Função para transformar o line-height em *rem
+@function leading($leading){$leading:($leading / 16) + rem;@return $leading;}
+
+// Função para transform o margin-bottom em *rem
+@function margin($margin){$margin:($margin / 16) + rem;@return $margin;}
+
+// Mixin para escolher o font-family
+@mixin fontFamily($family, $size) {
+    
+    @if $family == 'sans' {
+        @if $size <= 19 {font-family:$typeface-text;}
+        @else if $size >= 20 {font-family:$typeface-display;}
+        @else {font-family:inherit;}
+    }
+    @else if $family == 'mono' {font-family:$typeface-mono;}
+    @else {font-family:inherit;}
+}
+
+// Mixin para escolher o font-weight
+@mixin fontWeight($weight) {
+    @if $weight == 'thin'           { font-weight: 100; }
+    @else if $weight == 'xlight'    { font-weight: 200; }
+    @else if $weight == 'light'     { font-weight: 300; }
+    @else if $weight == 'regular'   { font-weight: 400; }
+    @else if $weight == 'medium'    { font-weight: 500; }
+    @else if $weight == 'semibold'  { font-weight: 600; }
+    @else if $weight == 'bold'      { font-weight: 700; }
+    @else if $weight == 'xbold'     { font-weight: 800; }
+    @else if $weight == 'black'     { font-weight: 900; }
+    @else                           { font-weight: inherit; }
+}
+
+// Mixin para escolher o font-style
+@mixin fontStyle($style) {
+    @if $style == 'normal' { font-style: normal; }
+    @else if $style == 'italic' { font-style: italic; }
+    @else { font-style: inherit; }
+}
+
+// Mixin para declarar o font-size, line-height, letter-spacing e margin-bottom
+@mixin moreValues($size, $leading, $tracking, $margin) {
+    font-size: size($size);
+    line-height: leading($leading);
+    letter-spacing: tracking($tracking, $size);
+    margin-bottom: margin($margin);
+    &:last-child { margin-bottom: margin(0);}
+}
+
+// Um único mixin para chamar todos os outros
+@mixin typography($family, $weight, $style, $size, $leading, $tracking, $margin) {
+    @include fontFamily($family, $size);
+    @include fontWeight($weight);
+    @include fontStyle($style);
+    @include moreValues($size, $leading, $tracking, $margin);
+}
+
+// Mixin para typografia em telas pequenas (small)
+@mixin typographySmall {
+    body { @include typography('sans', 'regular', 'normal', 16, 24, 0.5, 0); }
+    h1 { @include typography('sans', 'light', 'normal', 36, 48, -1.5, 29); }
+    h2 { @include typography('sans', 'light', 'normal', 29, 40, -0.5, 23); }
+    h3 { @include typography('sans', 'regular', 'normal', 24, 32, 0, 16); }
+    h4 { @include typography('sans', 'regular', 'normal', 21, 24, 0.25, 16); }
+    h5 { @include typography('sans', 'medium', 'normal', 16, 24, 0, 18); }
+    h6 { @include typography('sans', 'regular', 'italic', 16, 24, 0.15, 18); }
+    p { @include typography('sans', 'regular', 'normal', 16, 24, 0.5, 16); }
+}
+
+// Mixin para typografia em telas grandes (large)
+@mixin typographyLarge {
+    body { @include typography('sans', 'regular', 'normal', 16, 24, 0.5, 0); }
+    h1 { @include typography('sans', 'light', 'normal', 48, 56, -1.5, 36); }
+    h2 { @include typography('sans', 'light', 'normal', 37, 48, -0.5, 29); }
+    h3 { @include typography('sans', 'regular', 'normal', 29, 40, 0, 23); }
+    h4 { @include typography('sans', 'regular', 'normal', 21, 32, 0.25, 16); }
+    h5 { @include typography('sans', 'medium', 'normal', 16, 24, 0, 18); }
+    h6 { @include typography('sans', 'regular', 'italic', 16, 24, 0.15, 18); }
+    p { @include typography('sans', 'regular', 'normal', 16, 24, 0.5, 16); }
+}

@@ -1,0 +1,27 @@
+@mixin navigation {
+    @extend %displayBlock;
+    width: 100%;
+    height: web(48);
+    line-height: web(48);
+    background-color: colorTrans(white, 1);
+    border-bottom: web(1) solid colorTrans(black, 0.12);
+}
+@mixin navMenu {
+    display: flex;
+    justify-content: space-around;
+    max-width: web(1036);
+    margin: web(0) auto;
+    width: 100%;
+}
+@mixin navLink {
+    @extend %displayBlock;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: colorTrans(black, 0.54);
+    font-weight: 500;
+    transition: all 0.2s ease-in;
+    &:hover {
+        color: colorTrans(black, 0.87);
+    }
+}

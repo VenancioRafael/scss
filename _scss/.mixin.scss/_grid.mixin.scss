@@ -1,0 +1,28 @@
+@mixin gridSmall {grid-template-columns: repeat($grid-col-small, 1fr);}
+
+@mixin gridMedium {grid-template-columns: repeat($grid-col-medium, 1fr);}
+
+@mixin gridLarge {grid-template-columns: repeat($grid-col-large, 1fr);}
+
+@mixin gridXLarge {grid-template-columns: repeat($grid-col-xlarge, 1fr);}
+
+@mixin column($value1, $value2) {@for $col from 1 through $value2 {&-#{$value1}-#{$col}{grid-column:span $col;}}}
+
+@mixin column1($value) {
+    $value1: $value;
+    @if $value == 'sm' {$value2:$grid-col-small;@include column($value1,$value2);}
+    @else if $value == 'md' {$value2:$grid-col-medium;@include column($value1,$value2);}
+    @else if $value == 'lg' {$value2:$grid-col-large;@include column($value1,$value2);}
+    @else if $value == 'xl' {$value2:$grid-col-xlarge;@include column($value1,$value2);}
+}
+
+@mixin createRow {
+    display: grid;
+    max-width: 72rem;
+    width: 100%;
+    grid-template-rows: repeat(auto, 1fr);
+    grid-gap: $grid-gutter-width;
+    margin: 0 auto;
+    padding: { top: $grid-gutter-width !important; bottom: $grid-gutter-width; };
+    &:last-child { padding: 0; }
+}

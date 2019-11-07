@@ -1,0 +1,9 @@
+// Função para transformar qualquer valor em *rem
+@function web($value) { $value: ($value / 16) + rem; @return $value; }
+
+// Função para transformar qualquer cor transparente
+@function colorTrans($color, $opacity) {
+    $opacity: 1 - $opacity;
+    $color: transparentize($color, $opacity);
+    @return $color;
+}

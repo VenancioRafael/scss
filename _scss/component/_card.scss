@@ -1,0 +1,14 @@
+@import '../.mixin.scss/card.mixin';
+
+.card {
+    @include card;
+    &__title {
+        @include cardTitle;
+    }
+    &__content {
+        @include cardContent;
+    }
+    &__action {
+        @include cardAction;
+    }
+}

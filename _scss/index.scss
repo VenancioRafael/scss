@@ -1,0 +1,20 @@
+// NUNCA IMPORTAR OS ARQUIVOS DA PASTA .mixin.scss!!!!
+// SEUS RESPECTIVOS EM base e component FARÃO O SERVIÇO ;)
+
+// Editor utilizado: specme.txt
+
+@import './global.function';
+
+@import './variables/breakpoint';
+@import './variables/typography';
+
+@import './base/reset';
+
+@import './global.extend';
+
+@import './base/typography';
+@import './base/html';
+
+@import './component/grid';
+@import './component/navigation';
+@import './component/card';
